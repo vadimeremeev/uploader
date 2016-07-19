@@ -1,10 +1,10 @@
 class Operation < ApplicationRecord
-	has_and_belongs_to_many :categories
+  has_and_belongs_to_many :categories
 
-	belongs_to :company
+  belongs_to :company
 
 
-	def self.import_csv(path_to_csv)
+  def self.import_csv(path_to_csv)
     require 'csv'
 
     Rails.logger.error "File Not Exists #{path_to_csv}" and return false unless File.exists?(path_to_csv)
@@ -38,5 +38,5 @@ class Operation < ApplicationRecord
         operation.save!
       end
     end
-	end
+  end
 end

@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-	has_and_belongs_to_many :operations
+  has_and_belongs_to_many :operations
 end

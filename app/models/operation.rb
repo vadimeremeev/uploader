@@ -16,7 +16,7 @@ class Operation < ApplicationRecord
       #need to check dates before push to db
 
       company    = Company.where(name: row[0]).first_or_create
-      categories = row[8].split(';') unless row[0].empty?
+      categories = row[8].split(';') unless row[8].empty?
 
       operation = Operation.create(
         :invoice_num => row[1],

@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160719102008) do
   end
 
   create_table "operations", force: :cascade do |t|
-    t.integer  "companies_id"
+    t.integer  "company_id"
     t.string   "invoice_num"
     t.date     "invoice_date"
     t.date     "open_date"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160719102008) do
     t.string   "status"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["companies_id"], name: "index_operations_on_companies_id"
+    t.index ["company_id"], name: "index_operations_on_company_id"
   end
 
 end

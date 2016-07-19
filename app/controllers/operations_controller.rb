@@ -1,14 +1,17 @@
 class OperationsController < ApplicationController
 
-	def index
+  def index
 
-	end
+  end
 
   def import
-  	render 'import'
+    path = '/Users/vadim/Downloads/ImporterAppExample.csv'
+    Operation.import_csv(path)
+
+    render 'import'
   end
 
   def export
-  	render 'export'
+    render 'export'
   end
 end

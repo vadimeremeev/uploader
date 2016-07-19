@@ -7,6 +7,8 @@ class Operation < ApplicationRecord
 	def self.import_csv(path_to_csv)
     require 'csv'
 
+    return false unless File.exists?(path_to_csv)
+
     csv_text = File.read(path_to_csv)
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|

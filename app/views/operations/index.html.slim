@@ -1,1 +1,5 @@
-' Hello World
+div
+  = form_tag({controller: :operations, action: :import, method: :post}, multipart: true) do
+    = file_field_tag :attachment
+    br
+    = submit_tag "Upload"

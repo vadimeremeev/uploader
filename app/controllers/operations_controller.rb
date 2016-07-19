@@ -5,8 +5,7 @@ class OperationsController < ApplicationController
   end
 
   def import
-    path = '/Users/vadim/Downloads/ImporterAppExample.csv'
-    Operation.import_csv(path)
+    Operation.import_csv(params[:attachment].tempfile.path)
 
     render 'import'
   end
